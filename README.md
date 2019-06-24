@@ -1,4 +1,4 @@
-# Altar.io FrontEnd Exercise 061901
+# Altar.io FrontEnd Exercise 0619
 The candidate should write the solution using Angular framework and it's free to use any patterns, methodologies and styling language.
 You will be creating 2 pages with a couple of interactive widgets. 
 The exercise involves creating **2 routes**: 
