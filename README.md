@@ -1,9 +1,16 @@
-# Altar.io FrontEnd Exercise 0619
+# Altar.io Angular FrontEnd Exercise 0619
 The candidate should write the solution using Angular framework and it's free to use any patterns, methodologies and styling language.
 You will be creating 2 pages with a couple of interactive widgets. 
 The exercise involves creating **2 routes**: 
 - /generator/ 
 -  /payments/ 
+
+## Steps
+1. Fork the project
+2. Clone it to your computer
+3. Create a branch with your name (ex: andre-pinto)
+4. Develop under that branch
+5. Submit a Pull Request to us
 
 
 ## Generator Page
