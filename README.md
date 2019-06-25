@@ -63,7 +63,7 @@ This payments list should be ready to be saved to an **API**.
 The user should be able to **navigate** between the 2 pages whilst not losing any information i.,e., still see the payments list.
 
 
-
+    
 
 
 
