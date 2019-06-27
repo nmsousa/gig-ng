@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <!-- Character Input -->
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label class="text-secondary font-weight-bold" for="character">CHARACTER</label>
+          <input
+            type="text"
+            class="form-control character-input"
+            id="character"
+            name="character"
+            #inputCharacter="ngModel"
+            [(ngModel)]="character"
+            placeholder="Character"
+            pattern="[a-z]{1}"
+            (input)="onInputChange($event)"
+            [readonly]="inputCooldown" />
+
+
+
+          <div [hidden]="inputCharacter.valid" class="alert alert-danger">
+            <div>Must be a single letter [a-z]</div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <div class="col timer">{{ now | date:'HH:mm:ss' }}</div>
+
+    <!-- Generate Button -->
+    <div class="col">
+      <button
+        type="submit"
+        class="btn btn-secondary generate-button"
+        (click)="generateGrid()"
+        [disabled]="!inputCharacter.valid">
+        GENERATE 2D GRID
+      </button>
+    </div>
+  </div>
+
+  <!-- Matrix Table -->
+  <div class="row">
+    <table class="col">
+      <tbody>
+        <tr *ngFor="let row of matrix">
+          <td *ngFor="let cell of row">
+            {{ cell }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Life code text -->
+  <div class="row justify-content-center">
+      <div class="col-4 text-center live-dot-container">
+        <span class="live-dot bg-danger"></span>
+        <label class="live-label font-weight-bold">LIVE</label>
+      </div>
+  </div>
+
+  <!-- CODE -->
+  <div class="row justify-content-center">
+    <div class="col-4 live-code">
+      YOUR CODE: <span class="font-weight-bold">{{ code }}</span>
+  </div>
+  </div>
+
+</div>
