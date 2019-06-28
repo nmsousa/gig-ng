@@ -1,3 +1,13 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-light bg-light navbar-expand-sm">
+  <!-- Navbar content -->
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item" [routerLinkActive]="['active']">
+      <a class="nav-link" [routerLink]="['/generator']">Generator</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['active']">
+      <a class="nav-link" [routerLink]="['/payments']">Payments</a>
+    </li>
+  </ul>
+</nav>
 
 <router-outlet></router-outlet>

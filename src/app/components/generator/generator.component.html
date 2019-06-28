@@ -17,8 +17,7 @@
             (input)="onInputChange($event)"
             [readonly]="inputCooldown" />
 
-
-
+          <!-- Invalid input msg -->
           <div [hidden]="inputCharacter.valid" class="alert alert-danger">
             <div>Must be a single letter [a-z]</div>
           </div>

@@ -1,3 +1,66 @@
-<p>
-  payments works!
-</p>
+<div class="container">
+  <div class="row">
+    <form>
+      <!-- Payment name -->
+      <div class="form-group">
+        <label class="text-secondary font-weight-bold" for="name">PAYMENT</label>
+        <input
+          type="text"
+          class="form-control character-input"
+          id="name"
+          name="name"
+          #paymentNameInput="ngModel"
+          [(ngModel)]="newPayment.name"
+          placeholder="Payment"
+          required />
+      </div>
+
+      <!-- Payment amount -->
+      <div class="form-group">
+        <label class="text-secondary font-weight-bold" for="character">AMOUNT</label>
+        <input
+          type="number"
+          class="form-control"
+          id="amount"
+          name="amount"
+          #paymentAmountInput="ngModel"
+          [(ngModel)]="newPayment.amount"
+          placeholder="Amount"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-secondary add-button"
+        (click)="addPayment()"
+        [disabled]="!paymentNameInput.valid">
+        + ADD
+      </button>
+    </form>
+  </div>
+
+  <div class="row" [style.margin-top.px]="20">
+    <div class="col-12">
+      <label class="text-secondary font-weight-bold" for="character">PAYMENT LIST</label>
+      <!-- Payment list -->
+      <table class="table table-striped">
+        <thead>
+          <tr class="text-secondary">
+            <th scope="col">NAME</th>
+            <th scope="col">AMOUNT</th>
+            <th scope="col">CODE</th>
+            <th scope="col">GRID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of payments">
+            <td>{{ payment.name }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.code }}</td>
+            <td>{{ payment.grid }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
