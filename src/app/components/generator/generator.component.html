@@ -53,19 +53,7 @@
     </table>
   </div>
 
-  <!-- Life code text -->
-  <div class="row justify-content-center">
-      <div class="col-4 text-center live-dot-container">
-        <span class="live-dot bg-danger"></span>
-        <label class="live-label font-weight-bold">LIVE</label>
-      </div>
-  </div>
-
-  <!-- CODE -->
-  <div class="row justify-content-center">
-    <div class="col-4 live-code">
-      YOUR CODE: <span class="font-weight-bold">{{ code }}</span>
-  </div>
-  </div>
+  <!-- Life code -->
+  <app-live-code [code]="code" [label]="'YOUR CODE'"></app-live-code>
 
 </div>

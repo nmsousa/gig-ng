@@ -8,16 +8,10 @@ import { Subject, Observable } from 'rxjs';
 export class PaymentService {
 
   private payments: Payment[] = [];
-  private paymentsChange = new Subject<Payment[]>();
+  public paymentsChange = new Subject<Payment[]>();
 
   constructor() { }
 
-  /**
-   * Observable that will inform when the payment list have been changed
-   */
-  public getPaymentsChange(): Observable<Payment[]> {
-    return this.paymentsChange.asObservable();
-  }
 
   public getAll(): Payment[] {
     return this.payments;
@@ -28,6 +22,11 @@ export class PaymentService {
 
     // Inform whoever has a list of payments that there is an update
     this.paymentsChange.next(this.payments);
+  }
+
+  public save(payments: Payment[]): void {
+    // TODO: Save to an API, for now we save in the localStorage
+    localStorage.setItem('payments', JSON.stringify(payments));
   }
 
 }

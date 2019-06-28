@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GeneratorComponent } from './components/generator/generator.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+import { LiveCodeComponent } from './components/live-code/live-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GeneratorComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    LiveCodeComponent
   ],
   imports: [
     BrowserModule,

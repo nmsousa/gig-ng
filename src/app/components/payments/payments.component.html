@@ -1,4 +1,8 @@
 <div class="container">
+
+  <!-- Life code -->
+  <app-live-code [code]="code" [label]="'YOUR CODE NOW'"></app-live-code>
+
   <div class="row">
     <form>
       <!-- Payment name -->
@@ -57,7 +61,11 @@
             <td>{{ payment.name }}</td>
             <td>{{ payment.amount }}</td>
             <td>{{ payment.code }}</td>
-            <td>{{ payment.grid }}</td>
+            <td>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" *ngIf="payment.grid && payment.grid.length > 0"  [title]="payment.grid">
+                  Check the tooltip!
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
